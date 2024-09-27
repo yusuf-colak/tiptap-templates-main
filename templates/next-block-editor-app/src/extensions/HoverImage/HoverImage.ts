@@ -25,6 +25,9 @@ export const HoverImage = Node.create({
       uuid: {
         default: null, // UUID attribute, initially null, but will be set when created
       },
+      width: {
+        default: 50, // Default width of the hover card
+      },
     }
   },
 

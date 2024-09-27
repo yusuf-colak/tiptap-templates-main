@@ -14,7 +14,7 @@ export const Accordion = Node.create({
   addAttributes() {
     return {
       title: {
-        default: 'Default Accordion Title',
+        default: 'Accordion Title',
       },
     }
   },
@@ -48,7 +48,7 @@ export const Accordion = Node.create({
                 content: [
                   {
                     type: 'text',
-                    text: 'Accordion 2',
+                    text: 'Accordion Content',
                   },
                 ],
               },

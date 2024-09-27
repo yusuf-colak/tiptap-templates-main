@@ -12,13 +12,13 @@ export const initialContent = {
             {
               type: 'accordion',
               attrs: {
-                title: 'MÖerhab dasdasda',
+                title: 'dasdasdada',
               },
               content: [
                 {
                   type: 'paragraph',
                   attrs: {
-                    id: '7eb6cf7e-b250-470d-92de-1420c8faa7f3',
+                    id: '3638bed9-8f14-40b8-916c-4178f800533b',
                     class: null,
                     textAlign: 'left',
                   },
@@ -32,84 +32,47 @@ export const initialContent = {
                 {
                   type: 'paragraph',
                   attrs: {
-                    id: '378e20dd-437d-4e1d-9c7f-ee720284a726',
+                    id: 'c82452a3-cf44-49a7-8a40-f047a1e84ac8',
                     class: null,
                     textAlign: 'left',
                   },
                   content: [
                     {
                       type: 'text',
-                      text: 'dsadsadsa',
+                      text: 'dsadadada',
                     },
                   ],
                 },
                 {
                   type: 'paragraph',
                   attrs: {
-                    id: 'b77184e0-5cd8-489e-bf56-2b6ccbfb92af',
+                    id: '60a1ab0b-8916-44f0-922e-d23ae8aa3124',
                     class: null,
                     textAlign: 'left',
                   },
                   content: [
                     {
                       type: 'text',
-                      text: 'da',
+                      text: 'merhaba dsadasd',
                     },
                   ],
                 },
                 {
                   type: 'paragraph',
                   attrs: {
-                    id: '8d05f035-9181-4164-a60a-60c57b952f1a',
+                    id: 'd9991b69-4d22-41b7-aecd-c51ce948ad81',
                     class: null,
                     textAlign: 'left',
                   },
                   content: [
                     {
-                      type: 'text',
-                      text: 'dsa',
-                    },
-                  ],
-                },
-                {
-                  type: 'paragraph',
-                  attrs: {
-                    id: '4ff2d683-341a-47a5-864d-108061cd8b49',
-                    class: null,
-                    textAlign: 'left',
-                  },
-                  content: [
-                    {
-                      type: 'text',
-                      text: 'd',
-                    },
-                  ],
-                },
-                {
-                  type: 'paragraph',
-                  attrs: {
-                    id: '07bb9294-f1ba-4afd-903f-2abbda1536c8',
-                    class: null,
-                    textAlign: 'left',
-                  },
-                  content: [
-                    {
-                      type: 'text',
-                      text: 'ad',
-                    },
-                  ],
-                },
-                {
-                  type: 'paragraph',
-                  attrs: {
-                    id: 'e0801350-31f1-42ef-a102-9fbd8f5932e6',
-                    class: null,
-                    textAlign: 'left',
-                  },
-                  content: [
-                    {
-                      type: 'text',
-                      text: 'as',
+                      type: 'hoverImage',
+                      attrs: {
+                        href: 'https://daq0vx3g0xopw.cloudfront.net/tiptap/1727434254464-images.jpeg',
+                        title: 'olkl',
+                        uuid: 'a28f446f-6c2f-4967-ac39-f4293b908579',
+                        width: 50,
+                      },
                     },
                   ],
                 },
@@ -118,10 +81,126 @@ export const initialContent = {
             {
               type: 'paragraph',
               attrs: {
-                id: '7e00c2b5-0613-4a30-b37c-fd8f67bd53ea',
+                id: 'e6984ef5-92ca-4782-8ef1-1ffc8ec5b4ab',
                 class: null,
                 textAlign: 'left',
               },
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: 'ad940268-5360-4cdc-b44b-abe6f16b1b67',
+                class: null,
+                textAlign: 'left',
+              },
+              content: [
+                {
+                  type: 'hoverImage',
+                  attrs: {
+                    href: 'https://daq0vx3g0xopw.cloudfront.net/tiptap/1727438962658-joy-dsc-7693.webp',
+                    title: 'dsadasda',
+                    uuid: '7024819f-0e4f-4752-8fba-18f74e66f445',
+                    width: 100,
+                  },
+                },
+              ],
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: 'd5a77a1c-a1a0-4989-af9e-1b1956b7b8eb',
+                class: null,
+                textAlign: 'left',
+              },
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: '5aa9712c-779f-4dcf-9197-e723dd7691a4',
+                class: null,
+                textAlign: 'left',
+              },
+              content: [
+                {
+                  type: 'hoverImage',
+                  attrs: {
+                    href: 'https://daq0vx3g0xopw.cloudfront.net/tiptap/1727439400157-joy-dsc-7693.webp',
+                    title: 'dsadasd',
+                    uuid: 'cf80d6e3-05aa-427e-a72a-1fcf52381420',
+                    width: 100,
+                  },
+                },
+              ],
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: 'b036683d-90e6-4887-8358-8754375c660e',
+                class: null,
+                textAlign: 'left',
+              },
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: '71dd8439-db71-48a6-9a50-1b543b99c015',
+                class: null,
+                textAlign: 'left',
+              },
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: 'fcac1a4e-2e50-4104-acdd-84c739de5df5',
+                class: null,
+                textAlign: 'left',
+              },
+              content: [
+                {
+                  type: 'hoverImage',
+                  attrs: {
+                    href: 'https://daq0vx3g0xopw.cloudfront.net/tiptap/1727439590985-1672909475481.jpeg',
+                    title: 'DENEME RESİM',
+                    uuid: 'a9a474f2-4c7e-437b-abca-cc0ee65837ed',
+                    width: 100,
+                  },
+                },
+              ],
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: '6f18515b-4519-44f3-b0ff-9dc85a5cc580',
+                class: null,
+                textAlign: 'left',
+              },
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: 'f4d46cff-4fde-4b81-877a-7a2301054f57',
+                class: null,
+                textAlign: 'left',
+              },
+            },
+            {
+              type: 'paragraph',
+              attrs: {
+                id: '6c152cbc-d8e8-4f33-85c4-5a7fcbd5a251',
+                class: null,
+                textAlign: 'left',
+              },
+              content: [
+                {
+                  type: 'hoverImage',
+                  attrs: {
+                    href: 'https://daq0vx3g0xopw.cloudfront.net/tiptap/1727439609944-joy-dsc-7693.webp',
+                    title: 'RESİM 2 ',
+                    uuid: '0566c796-55cd-41b7-bab9-ce91718e122b',
+                    width: 100,
+                  },
+                },
+              ],
             },
           ],
         },
