@@ -14,7 +14,6 @@ import type { EditorUser } from '../components/BlockEditor/types'
 import { initialContent } from '@/lib/data/initialContent'
 import { Ai } from '@/extensions/Ai'
 import { AiImage, AiWriter } from '@/extensions'
-import { SetHoverImage } from '@/extensions/extension-HoverImage'
 
 declare global {
   interface Window {
@@ -41,6 +40,7 @@ export const useBlockEditor = ({
 
   const editor = useEditor(
     {
+      editable: true,
       immediatelyRender: true,
       shouldRerenderOnTransaction: false,
       autofocus: true,
@@ -61,7 +61,6 @@ export const useBlockEditor = ({
       extensions: [
         ...ExtensionKit({
           provider,
-          
         }),
 
         provider
@@ -103,6 +102,7 @@ export const useBlockEditor = ({
     },
     [ydoc, provider],
   )
+
   const users = useEditorState({
     editor,
     selector: (ctx): (EditorUser & { initials: string })[] => {

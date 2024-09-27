@@ -1,5 +1,5 @@
 import { EditorContent } from '@tiptap/react'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import { LinkMenu } from '@/components/menus/LinkMenu'
 import { ImageHoverMenu } from '@/components/menus/ImageHoverMenu'
@@ -18,6 +18,7 @@ import { ContentItemMenu } from '../menus/ContentItemMenu'
 import { useSidebar } from '@/hooks/useSidebar'
 import * as Y from 'yjs'
 import { TiptapCollabProvider } from '@hocuspocus/provider'
+import { Button } from '../ui/Button'
 
 export const BlockEditor = ({
   aiToken,
@@ -38,6 +39,7 @@ export const BlockEditor = ({
     return null
   }
 
+
   return (
     <div className="flex h-full" ref={menuContainerRef}>
       <Sidebar isOpen={leftSidebar.isOpen} onClose={leftSidebar.close} editor={editor} />
@@ -49,10 +51,17 @@ export const BlockEditor = ({
           isSidebarOpen={leftSidebar.isOpen}
           toggleSidebar={leftSidebar.toggle}
         />
+        <Button
+          onClick={() => {
+            console.log('editor.getJSON()', editor.getJSON())
+          }}
+        >
+          GET JSON
+        </Button>
         <EditorContent editor={editor} className="flex-1 overflow-y-auto" />
         <ContentItemMenu editor={editor} />
         <LinkMenu editor={editor} appendTo={menuContainerRef} />
-        <ImageHoverMenu editor={editor} appendTo={menuContainerRef} />
+        {/* <ImageHoverMenu editor={editor} appendTo={menuContainerRef} /> */}
         <TextMenu editor={editor} />
         <ColumnsMenu editor={editor} appendTo={menuContainerRef} />
         <TableRowMenu editor={editor} appendTo={menuContainerRef} />

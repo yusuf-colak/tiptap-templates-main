@@ -1,6 +1,7 @@
 import { Node, mergeAttributes } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
 import HoverImageNode from './HoverImageNode' // Your custom React component for hover card
+import { v4 as uuidv4 } from 'uuid' // UUID üretmek için
 
 export const HoverImage = Node.create({
   name: 'hoverImage', // Node name
@@ -16,10 +17,13 @@ export const HoverImage = Node.create({
   addAttributes() {
     return {
       href: {
-        default: '#', // Default link href
+        default: '#', // Default link href (image URL)
       },
       title: {
         default: '', // Default title attribute
+      },
+      uuid: {
+        default: null, // UUID attribute, initially null, but will be set when created
       },
     }
   },
@@ -46,26 +50,63 @@ export const HoverImage = Node.create({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(HoverImageNode) // Use the custom React component
+    return ReactNodeViewRenderer(HoverImageNode)
   },
 
   addCommands() {
     return {
       setHoverImage:
         attributes =>
-        ({ commands, editor }) => {
-          const { selection } = editor.state
-          const selectedText = editor.state.doc.textBetween(selection.from, selection.to) // Get the selected text
+        ({ state, commands, dispatch }) => {
+          const { selection } = state
+          const selectedText = state.doc.textBetween(selection.from, selection.to)
 
-          // Insert the hover card with the selected text as the title attribute
+          const { nodeBefore } = selection.$from
+
+          // Eğer zaten seçili bir hoverImage node varsa ve aynı UUID'ye sahipse, güncelleme yap
+          if (nodeBefore?.type.name === 'hoverImage' && nodeBefore.attrs.uuid === attributes.uuid) {
+            return commands.updateAttributes('hoverImage', {
+              href: attributes.href,
+              title: selectedText || 'Hover Card Title',
+            })
+          }
+
+          // Yeni bir hoverImage node ekle, UUID'yi oluştur ve ata
+          const newUuid = uuidv4()
+
           return commands.insertContent({
             type: 'hoverImage',
             attrs: {
               ...attributes,
-              title: selectedText || 'Hover Card Title', // Use the selected text as the title
+              title: selectedText || 'Hover Card Title',
+              uuid: newUuid, // Yeni UUID ekleniyor
             },
-            content: [], // No need for additional content since title is already set
+            content: [],
           })
+        },
+
+      updateHoverImageByUUID:
+        (uuid, attributes) =>
+        ({ state, commands }) => {
+          const { tr } = state
+          let updated = false
+
+          // Belgedeki tüm düğümleri dolaşarak UUID'yi eşleştir ve güncelle
+          state.doc.descendants((node, pos) => {
+            if (node.type.name === 'hoverImage' && node.attrs.uuid === uuid) {
+              tr.setNodeMarkup(pos, undefined, {
+                ...node.attrs,
+                ...attributes,
+              })
+              updated = true
+            }
+          })
+
+          if (updated) {
+            commands.setMeta('addToHistory', false)
+            return tr
+          }
+          return false
         },
     }
   },

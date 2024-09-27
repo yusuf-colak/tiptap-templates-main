@@ -1,38 +1,56 @@
-import { BlockEditor } from '@/components/BlockEditor'
 import {
   Accordion as AccordionShadcn,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { EditorContent, NodeViewContent, NodeViewWrapper, NodeViewWrapperProps } from '@tiptap/react'
-import React from 'react'
-import { Doc as YDoc } from 'yjs'
-import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react'
-import { useBlockEditor } from '@/hooks/useBlockEditor'
-import { ContentItemMenu } from '@/components/menus'
-import { useBlockEditorTest } from '@/hooks/useBlockEditorTest'
+import { NodeViewContent, NodeViewWrapper } from '@tiptap/react'
+import React, { useEffect, useRef } from 'react'
 
-export default (props: any) => {
-  const ydoc = useMemo(() => new YDoc(), [])
+export default props => {
+  const contentRef = useRef(null)
 
-  const { editor, users, collabState } = useBlockEditorTest({ ydoc })
-
-  if (!editor || !users) {
-    return null
+  const handleTitleChange = e => {
+    const newTitle = e.target.value
+    props.updateAttributes({ title: newTitle })
   }
+
+  const handleContentChange = () => {
+    if (contentRef.current) {
+      const newText = contentRef.current.innerHTML
+      props.updateAttributes({ text: newText })
+    }
+  }
+
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.innerHTML = props.node.attrs.text || ''
+    }
+  }, [props.node.attrs.text])
   return (
     <NodeViewWrapper className="react-component">
       <AccordionShadcn type="single" collapsible>
         <AccordionItem value="item-1" className="relative">
           <AccordionTrigger iconOnOnOff={true} locked={false} active={true} className={'py-0 w-auto'}>
-            {props.node.attrs.title}
+            {props.editor.isEditable ? (
+              <input
+                type="text"
+                className=" focus-visible:border-none focus-visible:border-0  w-full !bg-transparent"
+                value={props.node.attrs.title}
+                onChange={handleTitleChange}
+              />
+            ) : (
+              <div className="w-full text-start ">{props.node.attrs.title}</div>
+            )}
           </AccordionTrigger>
-          <AccordionContent className="h-auto w-[400px] bg-red-400">
-            <NodeViewContent data-drag-handle />
-
-            {/* <EditorContent editor={editor} className="flex-1 overflow-y-auto" />
-            <ContentItemMenu editor={editor} /> */}
+          <AccordionContent className="h-auto bg-red-400">
+            <NodeViewContent
+              ref={contentRef}
+              contentEditable={props.editor.isEditable ? true : false}
+              suppressContentEditableWarning={true}
+              onInput={handleContentChange}
+              data-drag-handle
+            />
           </AccordionContent>
         </AccordionItem>
       </AccordionShadcn>

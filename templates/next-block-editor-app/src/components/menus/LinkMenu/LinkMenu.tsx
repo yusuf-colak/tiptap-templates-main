@@ -29,7 +29,6 @@ export const LinkMenu = ({ editor, appendTo }: MenuProps): JSX.Element => {
 
   const onSetLink = useCallback(
     (url: string, openInNewTab?: boolean) => {
-      console.log('onSetLink', url)
       editor
         .chain()
         .focus()

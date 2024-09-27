@@ -16,9 +16,6 @@ export const Accordion = Node.create({
       title: {
         default: 'Default Accordion Title',
       },
-      text: {
-        default: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      },
     }
   },
 
@@ -55,23 +52,6 @@ export const Accordion = Node.create({
                   },
                 ],
               },
-              //   {
-              //     type: 'imageBlock',
-              //     attrs: {
-              //       src: '/placeholder-image.jpg',
-              //       width: '100%',
-              //       align: 'center',
-              //     },
-              //   },
-              //   {
-              //     type: 'paragraph',
-              //     content: [
-              //       {
-              //         type: 'text',
-              //         text: 'Accordion 3',
-              //       },
-              //     ],
-              //   },
             ],
           })
         },

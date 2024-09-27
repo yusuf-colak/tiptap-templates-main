@@ -45,7 +45,7 @@ export const ImageHoverMenu = ({ editor, appendTo }: MenuProps): JSX.Element => 
   return (
     <BaseBubbleMenu
       editor={editor}
-      pluginKey="textMenu"
+      pluginKey="hoverImage"
       shouldShow={shouldShow}
       updateDelay={0}
       tippyOptions={{
@@ -61,7 +61,7 @@ export const ImageHoverMenu = ({ editor, appendTo }: MenuProps): JSX.Element => 
       }}
     >
       {showEdit ? (
-        <ImagePopoverPanel initialUrl={href} onHoverLink={onHoverLink} />
+        // <ImagePopoverPanel initialUrl={href} onHoverLink={onHoverLink} />
       ) : (
         <ImagePreviewPanel url={href} onClear={onUnsetLink} onEdit={handleEdit} />
       )}
