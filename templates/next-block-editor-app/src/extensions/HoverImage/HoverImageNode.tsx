@@ -51,7 +51,7 @@ const HoverImageNode = ({ node, editor }) => {
                     }}
                     className="w-full"
                   >
-                    Onayla
+                    Bestätigen
                   </Button>
                   <Button
                     onClick={() => {
@@ -60,7 +60,7 @@ const HoverImageNode = ({ node, editor }) => {
                     }}
                     className="w-full"
                   >
-                    İptal
+                    Abbrechen
                   </Button>
                 </div>
               )}
@@ -76,7 +76,7 @@ const HoverImageNode = ({ node, editor }) => {
                     }}
                     className="min-w-[160px] w-full"
                   >
-                    Resimi Değiştir
+                    Bild austauschen
                   </Button>
 
                   <HoverImageBlockWidth onChange={onWidthChange} value={width} />

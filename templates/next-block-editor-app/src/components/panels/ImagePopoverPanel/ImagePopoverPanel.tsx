@@ -38,7 +38,7 @@ export const ImagePopoverPanel = ({ onHoverLink, initialUrl }: ImagePopoverPanel
                 onHoverLink(state.url)
               }}
             >
-              Onayla
+              Bestätigen
             </Button>
             <Button
               onClick={() => {
@@ -46,7 +46,7 @@ export const ImagePopoverPanel = ({ onHoverLink, initialUrl }: ImagePopoverPanel
               }}
               className="w-full "
             >
-              İptal
+              Abbrechen
             </Button>
           </div>
         </React.Fragment>
