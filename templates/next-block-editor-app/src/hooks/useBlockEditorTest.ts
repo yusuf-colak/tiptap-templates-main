@@ -21,7 +21,7 @@ declare global {
   }
 }
 
-export const useBlockEditor = ({
+export const useBlockEditorTest = ({
   aiToken,
   ydoc,
   provider,
@@ -61,7 +61,6 @@ export const useBlockEditor = ({
         ...ExtensionKit({
           provider,
         }),
-
         provider
           ? Collaboration.configure({
               document: ydoc,
@@ -101,7 +100,6 @@ export const useBlockEditor = ({
     },
     [ydoc, provider],
   )
-
   const users = useEditorState({
     editor,
     selector: (ctx): (EditorUser & { initials: string })[] => {

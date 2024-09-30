@@ -38,12 +38,12 @@ const AccordionTrigger = React.forwardRef<
         ref={ref}
         className={cn(
           locked && 'cursor-not-allowed text-gray-400',
-          'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>.flex>svg]:rotate-180',
+          'flex flex-1 text-base items-center justify-between pb-2 font-normal transition-all hover:underline [&[data-state=open]>.flex>svg]:rotate-180',
           className
         )}
         onClick={onClick}
       >
-        <div className="w-full">{children}</div>
+        <div className="">{children}</div>
         <div className="flex flex-row items-center">
           <div
             className={cn(

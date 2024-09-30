@@ -6,6 +6,7 @@ import {
 } from '@/components/ui/accordion'
 import { NodeViewContent, NodeViewWrapper } from '@tiptap/react'
 import React, { useEffect, useRef } from 'react'
+import {cn} from "@/lib/utils";
 
 export default props => {
   const contentRef = useRef(null)
@@ -27,6 +28,7 @@ export default props => {
       contentRef.current.innerHTML = props.node.attrs.text || ''
     }
   }, [props.node.attrs.text])
+
   return (
     <NodeViewWrapper className="react-component">
       <AccordionShadcn type="single" collapsible>
@@ -43,7 +45,10 @@ export default props => {
               <div className="w-full text-start ">{props.node.attrs.title}</div>
             )}
           </AccordionTrigger>
-          <AccordionContent className="h-auto bg-red-400">
+          <AccordionContent className={cn(
+            "h-auto",
+            props.editor.isEditable ? "border border-dashed border-gray-300" : ""
+          )}>
             <NodeViewContent
               ref={contentRef}
               contentEditable={props.editor.isEditable ? true : false}

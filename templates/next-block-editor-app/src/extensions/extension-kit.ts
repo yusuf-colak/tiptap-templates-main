@@ -50,6 +50,7 @@ import {
   TaskList,
   UniqueID,
   History,
+    AI
 } from '.'
 
 import { ImageUpload } from './ImageUpload'
@@ -61,6 +62,7 @@ interface ExtensionKitProps {
 }
 
 export const ExtensionKit = ({ provider }: ExtensionKitProps) => [
+  AI,
   Document,
   Columns,
   TaskList,

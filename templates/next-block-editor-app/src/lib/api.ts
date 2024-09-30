@@ -32,7 +32,7 @@ export class API {
       Body: _file,
       ContentType: _file.type,
     }
-    console.log('_file.type', _file.type)
+
     try {
       const upload = new Upload({
         client,
@@ -40,7 +40,7 @@ export class API {
       })
 
       await upload.done()
-      console.log('upload', `${process.env.NEXT_PUBLIC_S3_GETFILE_URL}${upload?.singleUploadResult?.Key}`)
+
       return `${process.env.NEXT_PUBLIC_S3_GETFILE_URL}${upload?.singleUploadResult?.Key}`
     } catch (error) {
       console.error('Error uploading file:', error)

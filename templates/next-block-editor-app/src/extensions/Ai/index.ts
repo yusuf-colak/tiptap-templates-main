@@ -1,9 +1,6 @@
-// This is a dummy file, to make the project work without the AI extension.
-import { Extension } from '@tiptap/core'
+import { AI } from './Ai'
 
-export type AiStorage = any
+export * from './Ai'
 export type Language = any
-export const tryParseToTiptapHTML = (args: any) => args
-export const Ai = Extension.create({
-  name: 'aiFree',
-})
+
+export default AI
