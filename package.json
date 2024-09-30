@@ -1,0 +1,25 @@
+{
+  "name": "@tiptap-pro/templates",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "templates/*"
+  ],
+  "description": "Templates for an advanced block editor using Tiptap",
+  "scripts": {
+    "dev": "npm run dev --prefix ./templates/next-block-editor-app",
+    "dev:simple-editor": "npm run dev --prefix ./templates/react-simple-editor",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nick the Sick",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.658.0",
+    "@aws-sdk/lib-storage": "^3.658.0",
+    "@aws-sdk/s3-request-presigner": "^3.658.0",
+    "@radix-ui/react-hover-card": "^1.1.1",
+    "@smithy/fetch-http-handler": "^3.2.8",
+    "openai": "^4.64.0"
+  }
+}
